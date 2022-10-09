@@ -33,12 +33,12 @@ function Banner() {
         backgroundPosition: "center center",
     }}>
         <div className="banner-content">
-            <h1 className='banner-title'>Movie Name</h1>
+            <h1 className='banner-title'>{movie?.name || movie?.original_name}</h1>
             <div className='banner-buttons'>
                 <button className='banner-button'>Play</button>
                 <button className='banner-button'>My List</button>
             </div>
-            <h1 className='banner-discription'>{truncate(`This is a test discription This is a test discription This is a test discription This is a test discription This is a test discription This is a test discription This is a test discription This is a test discription This is a test discription This is a test discription`,150)}</h1>
+            <h1 className='banner-discription'>{truncate(movie?.overview,150)}</h1>
         </div>
         <div className='banner-fadeButton'/>
     </header>
