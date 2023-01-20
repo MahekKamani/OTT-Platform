@@ -3,15 +3,15 @@ import './App.css';
 import HomeScreen from './HomeScreen';
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom'
 import LoginScreen from './LoginScreen';
-import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase';
 
 function App() {
   const user = null;
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged((userAuth) => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
       if(userAuth) {
-
+        console.log(userAuth);
       } else {
 
       }
